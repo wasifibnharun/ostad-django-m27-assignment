@@ -34,7 +34,7 @@ export default function WatchlistPage() {
         style={{
           padding: "48px 24px",
           textAlign: "center",
-          backgroundColor: "#FFFFFF",
+          backgroundcolor: '#FFFFFF',
           borderRadius: "14px",
           border: "1px solid #E2E8F0",
         }}
@@ -44,13 +44,13 @@ export default function WatchlistPage() {
           style={{
             fontSize: "18px",
             fontWeight: "700",
-            color: "#0F172A",
+            color: "var(--text-primary)",
             marginBottom: "8px",
           }}
         >
           Your watchlist is empty
         </h3>
-        <p style={{ fontSize: "14px", color: "#64748B", marginBottom: "24px" }}>
+        <p style={{ fontSize: "14px", color: "var(--text-secondary)", marginBottom: "24px" }}>
           Open any character and press the star icon to save it here.
         </p>
         <Link to="/characters" style={{ textDecoration: "none" }}>
@@ -75,13 +75,13 @@ export default function WatchlistPage() {
             style={{
               fontSize: "24px",
               fontWeight: "700",
-              color: "#0F172A",
+              color: "var(--text-primary)",
               margin: "0 0 4px 0",
             }}
           >
             Watchlist
           </h1>
-          <p style={{ margin: 0, fontSize: "14px", color: "#64748B" }}>
+          <p style={{ margin: 0, fontSize: "14px", color: "var(--text-secondary)" }}>
             {watchlistIds.length} characters saved to your personal list.
           </p>
         </div>

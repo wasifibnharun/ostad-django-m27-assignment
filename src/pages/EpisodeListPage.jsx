@@ -25,6 +25,7 @@ export default function EpisodeListPage() {
     // We also use AbortController to prevent race conditions on fast page clicks
     const controller = new AbortController();
     
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsLoading(true);
     setError(null);
 
@@ -69,8 +70,8 @@ export default function EpisodeListPage() {
   return (
     <div>
       <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#0F172A', margin: '0 0 4px 0' }}>Episodes</h1>
-        <p style={{ margin: 0, fontSize: '14px', color: '#64748B' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text-primary)', margin: '0 0 4px 0' }}>Episodes</h1>
+        <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-secondary)' }}>
           Manual fetch using Promises (no React Query).
         </p>
       </div>
@@ -87,12 +88,12 @@ export default function EpisodeListPage() {
         <>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
             {episodes.map(ep => (
-              <div key={ep.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#FFFFFF', padding: '16px', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
+              <div key={ep.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundcolor: '#FFFFFF', padding: '16px', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
                   <span style={{ fontWeight: '700', color: '#4F46E5', fontSize: '14px', width: '70px' }}>{ep.episode}</span>
-                  <span style={{ fontSize: '15px', fontWeight: '600', color: '#0F172A' }}>{ep.name}</span>
+                  <span style={{ fontSize: '15px', fontWeight: '600', color: 'var(--text-primary)' }}>{ep.name}</span>
                 </div>
-                <span style={{ fontSize: '13px', color: '#64748B' }}>{ep.air_date}</span>
+                <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>{ep.air_date}</span>
               </div>
             ))}
           </div>

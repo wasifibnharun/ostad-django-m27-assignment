@@ -10,6 +10,8 @@ import ErrorState from '../components/stats/ErrorState';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 import WatchlistPanel from '../components/watchlist/WatchListPanel';
+import RecentlyViewedPanel from '../components/watchlist/RecentlyViewedPanel';
+import DataFreshnessPanel from '../components/stats/DataFreshnessPanel';
 
 export default function CharacterListPage() {
   const queryClient = useQueryClient();
@@ -19,7 +21,7 @@ export default function CharacterListPage() {
 
   // Read current URL params, default page to 1
   const page = parseInt(searchParams.get('page') || '1', 10);
-  const nameQuery = searchParams.get('name') || '';
+  // const nameQuery = searchParams.get('name') || '';
 
   // [REQ-19] React Query loading/error/empty handling
   const { data, isPending, isError, error, isFetching } = useCharacters(searchParams);
@@ -68,10 +70,10 @@ export default function CharacterListPage() {
         {/* Header Section */}
         <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
           <div>
-            <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#0F172A', margin: '0 0 4px 0', letterSpacing: '-0.3px' }}>
+            <h1 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text-primary)', margin: '0 0 4px 0', letterSpacing: '-0.3px' }}>
               Characters
             </h1>
-            <p style={{ margin: 0, fontSize: '14px', color: '#64748B' }}>
+            <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-secondary)' }}>
               Browse 826 characters · filtered results update the URL so the view is shareable.
             </p>
           </div>
@@ -88,11 +90,11 @@ export default function CharacterListPage() {
         {/* Results Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <h2 style={{ margin: 0, fontSize: '18px', fontWeight: '700', color: '#0F172A' }}>Results</h2>
+            <h2 style={{ margin: 0, fontSize: '18px', fontWeight: '700', color: 'var(--text-primary)' }}>Results</h2>
             {isFetching && !isPending && <Badge status="refetching" text="background refetching..." />}
           </div>
           {!hasEmptyState && !isError && (
-            <span style={{ fontSize: '13px', color: '#64748B' }}>
+            <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
               Showing {characters.length} of {totalCount}
             </span>
           )}
@@ -146,9 +148,11 @@ export default function CharacterListPage() {
         )}
       </div>
 
-      {/* Right Rail placeholder (Watchlist & Data Freshness) */}
+      {/* Right Rail */}
       <aside style={{ width: '320px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
         <WatchlistPanel />
+        <RecentlyViewedPanel layout="panel" />
+        <DataFreshnessPanel />
       </aside>
     </div>
   );

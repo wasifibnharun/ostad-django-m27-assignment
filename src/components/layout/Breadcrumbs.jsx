@@ -7,7 +7,7 @@ export default function Breadcrumbs() {
   if (pathnames.length === 0) return null;
 
   return (
-    <nav style={{ fontSize: '12px', color: '#64748B', display: 'flex', gap: '6px' }}>
+    <nav style={{ fontSize: '12px', color: 'var(--text-secondary)', display: 'flex', gap: '6px' }}>
       <Link to="/" style={{ color: '#4F46E5', textDecoration: 'none' }}>Explore</Link>
       {pathnames.map((value, index) => {
         const isLast = index === pathnames.length - 1;
@@ -18,7 +18,7 @@ export default function Breadcrumbs() {
           <span key={to} style={{ display: 'flex', gap: '6px' }}>
             <span>›</span>
             {isLast ? (
-              <span style={{ fontWeight: '600', color: '#0F172A' }}>{label}</span>
+              <span style={{ fontWeight: '600', color: 'var(--text-primary)' }}>{label}</span>
             ) : (
               <Link to={to} style={{ color: '#4F46E5', textDecoration: 'none' }}>{label}</Link>
             )}

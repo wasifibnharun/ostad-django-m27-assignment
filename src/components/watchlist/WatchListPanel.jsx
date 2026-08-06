@@ -23,7 +23,7 @@ export default function WatchlistPanel() {
       {/* Watchlist Section */}
       <div
         style={{
-          backgroundColor: "#FFFFFF",
+          backgroundcolor: '#FFFFFF',
           padding: "20px",
           borderRadius: "14px",
           border: "1px solid #E2E8F0",
@@ -42,7 +42,7 @@ export default function WatchlistPanel() {
               margin: 0,
               fontSize: "16px",
               fontWeight: "700",
-              color: "#0F172A",
+              color: "var(--text-primary)",
             }}
           >
             Watchlist
@@ -65,7 +65,7 @@ export default function WatchlistPanel() {
         </div>
 
         {watchlistIds.length === 0 ? (
-          <p style={{ fontSize: "13px", color: "#64748B", margin: 0 }}>
+          <p style={{ fontSize: "13px", color: "var(--text-secondary)", margin: 0 }}>
             Empty. Add characters to keep track of them.
           </p>
         ) : isPending ? (
@@ -105,7 +105,7 @@ export default function WatchlistPanel() {
                     style={{
                       fontSize: "14px",
                       fontWeight: "600",
-                      color: "#0F172A",
+                      color: "var(--text-primary)",
                       whiteSpace: "nowrap",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -113,7 +113,7 @@ export default function WatchlistPanel() {
                   >
                     {char.name}
                   </div>
-                  <div style={{ fontSize: "12px", color: "#64748B" }}>
+                  <div style={{ fontSize: "12px", color: "var(--text-secondary)" }}>
                     {char.species} · {char.status}
                   </div>
                 </div>
@@ -140,7 +140,7 @@ export default function WatchlistPanel() {
       {/* Recently Viewed Section */}
       <div
         style={{
-          backgroundColor: "#FFFFFF",
+          backgroundcolor: '#FFFFFF',
           padding: "20px",
           borderRadius: "14px",
           border: "1px solid #E2E8F0",
@@ -151,13 +151,13 @@ export default function WatchlistPanel() {
             margin: "0 0 16px 0",
             fontSize: "16px",
             fontWeight: "700",
-            color: "#0F172A",
+            color: "var(--text-primary)",
           }}
         >
           Recently viewed
         </h3>
         {recent.length === 0 ? (
-          <p style={{ fontSize: "13px", color: "#64748B", margin: 0 }}>
+          <p style={{ fontSize: "13px", color: "var(--text-secondary)", margin: 0 }}>
             No characters viewed yet.
           </p>
         ) : (
@@ -190,7 +190,7 @@ export default function WatchlistPanel() {
                     style={{
                       fontSize: "14px",
                       fontWeight: "600",
-                      color: "#0F172A",
+                      color: "var(--text-primary)",
                       whiteSpace: "nowrap",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -198,7 +198,7 @@ export default function WatchlistPanel() {
                   >
                     {char.name}
                   </div>
-                  <div style={{ fontSize: "12px", color: "#64748B" }}>
+                  <div style={{ fontSize: "12px", color: "var(--text-secondary)" }}>
                     Character · {char.status}
                   </div>
                 </div>

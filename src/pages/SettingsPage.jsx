@@ -55,13 +55,13 @@ export default function SettingsPage() {
           style={{
             fontSize: "24px",
             fontWeight: "700",
-            color: "#0F172A",
+            color: "var(--text-primary)",
             margin: "0 0 4px 0",
           }}
         >
           Settings
         </h1>
-        <p style={{ margin: 0, fontSize: "14px", color: "#64748B" }}>
+        <p style={{ margin: 0, fontSize: "14px", color: "var(--text-secondary)" }}>
           Configure app behavior and manage client state.
         </p>
       </div>
@@ -70,7 +70,7 @@ export default function SettingsPage() {
         {/* Appearance */}
         <div
           style={{
-            backgroundColor: "#FFFFFF",
+            backgroundcolor: '#FFFFFF',
             padding: "24px",
             borderRadius: "14px",
             border: "1px solid #E2E8F0",
@@ -80,7 +80,7 @@ export default function SettingsPage() {
             style={{
               fontSize: "18px",
               fontWeight: "700",
-              color: "#0F172A",
+              color: "var(--text-primary)",
               margin: "0 0 16px 0",
             }}
           >
@@ -98,12 +98,12 @@ export default function SettingsPage() {
                 style={{
                   fontSize: "14px",
                   fontWeight: "600",
-                  color: "#0F172A",
+                  color: "var(--text-primary)",
                 }}
               >
                 Theme Mode
               </div>
-              <div style={{ fontSize: "13px", color: "#64748B" }}>
+              <div style={{ fontSize: "13px", color: "var(--text-secondary)" }}>
                 Switch between Light and Dark interface.
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function SettingsPage() {
         {/* Cache Settings */}
         <div
           style={{
-            backgroundColor: "#FFFFFF",
+            backgroundcolor: '#FFFFFF',
             padding: "24px",
             borderRadius: "14px",
             border: "1px solid #E2E8F0",
@@ -126,7 +126,7 @@ export default function SettingsPage() {
             style={{
               fontSize: "18px",
               fontWeight: "700",
-              color: "#0F172A",
+              color: "var(--text-primary)",
               margin: "0 0 16px 0",
             }}
           >
@@ -147,7 +147,7 @@ export default function SettingsPage() {
                   display: "block",
                   fontSize: "14px",
                   fontWeight: "600",
-                  color: "#0F172A",
+                  color: "var(--text-primary)",
                   marginBottom: "4px",
                 }}
               >
@@ -166,7 +166,7 @@ export default function SettingsPage() {
                 }}
               />
               <div
-                style={{ fontSize: "12px", color: "#64748B", marginTop: "4px" }}
+                style={{ fontSize: "12px", color: "var(--text-secondary)", marginTop: "4px" }}
               >
                 Time before query data is considered stale.
               </div>
@@ -178,7 +178,7 @@ export default function SettingsPage() {
                   display: "block",
                   fontSize: "14px",
                   fontWeight: "600",
-                  color: "#0F172A",
+                  color: "var(--text-primary)",
                   marginBottom: "4px",
                 }}
               >
@@ -197,7 +197,7 @@ export default function SettingsPage() {
                 }}
               />
               <div
-                style={{ fontSize: "12px", color: "#64748B", marginTop: "4px" }}
+                style={{ fontSize: "12px", color: "var(--text-secondary)", marginTop: "4px" }}
               >
                 Time before unused cache data is garbage collected.
               </div>
@@ -220,7 +220,7 @@ export default function SettingsPage() {
                 style={{
                   fontSize: "14px",
                   fontWeight: "600",
-                  color: "#0F172A",
+                  color: "var(--text-primary)",
                 }}
               >
                 refetchOnWindowFocus

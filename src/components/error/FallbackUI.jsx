@@ -5,10 +5,10 @@ export function FallbackUI({ error, resetBoundary }) {
       <h3 style={{ margin: '0 0 8px 0', color: '#B91C1C', fontSize: '18px', fontWeight: '700' }}>
         Oops! Something crashed.
       </h3>
-      <p style={{ margin: '0 0 16px 0', color: '#0F172A', fontSize: '14px' }}>
+      <p style={{ margin: '0 0 16px 0', color: 'var(--text-primary)', fontSize: '14px' }}>
         We caught an error while rendering this panel. The rest of the dashboard should still work.
       </p>
-      <details style={{ marginBottom: '16px', fontSize: '13px', color: '#64748B' }}>
+      <details style={{ marginBottom: '16px', fontSize: '13px', color: 'var(--text-secondary)' }}>
         <summary style={{ cursor: 'pointer', outline: 'none' }}>Technical details</summary>
         <pre style={{ marginTop: '8px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
           {error?.message || 'Unknown Error'}

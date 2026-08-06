@@ -62,8 +62,8 @@ export default function LocationListPage() {
   return (
     <div>
       <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#0F172A', margin: '0 0 4px 0' }}>Locations</h1>
-        <p style={{ margin: 0, fontSize: '14px', color: '#64748B' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text-primary)', margin: '0 0 4px 0' }}>Locations</h1>
+        <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-secondary)' }}>
           Manual fetch using Async/Await (no React Query).
         </p>
       </div>
@@ -80,11 +80,11 @@ export default function LocationListPage() {
         <>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '16px', marginBottom: '32px' }}>
             {locations.map(loc => (
-              <div key={loc.id} style={{ backgroundColor: '#FFFFFF', padding: '20px', borderRadius: '14px', border: '1px solid #E2E8F0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '700', color: '#0F172A' }}>{loc.name}</h3>
+              <div key={loc.id} style={{ backgroundcolor: '#FFFFFF', padding: '20px', borderRadius: '14px', border: '1px solid #E2E8F0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <h3 style={{ margin: 0, fontSize: '16px', fontWeight: '700', color: 'var(--text-primary)' }}>{loc.name}</h3>
                 <span style={{ fontSize: '13px', color: '#4F46E5', fontWeight: '600' }}>{loc.type}</span>
-                <span style={{ fontSize: '12px', color: '#64748B' }}>Dimension: {loc.dimension}</span>
-                <span style={{ fontSize: '12px', color: '#64748B', marginTop: 'auto' }}>{loc.residents.length} residents</span>
+                <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>Dimension: {loc.dimension}</span>
+                <span style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: 'auto' }}>{loc.residents.length} residents</span>
               </div>
             ))}
           </div>

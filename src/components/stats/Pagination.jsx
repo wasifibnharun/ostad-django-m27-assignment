@@ -35,7 +35,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange, onPr
       ))}
 
       {totalPages > 5 && currentPage < totalPages - 2 && (
-        <span style={{ color: '#64748B' }}>...</span>
+        <span style={{ color: 'var(--text-secondary)' }}>...</span>
       )}
       
       {totalPages > 5 && currentPage < totalPages - 2 && (

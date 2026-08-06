@@ -12,6 +12,7 @@ export default function CharacterFilters({ currentParams, onFilterChange }) {
 
   // Keep local state in sync if URL params change externally (e.g., back button)
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFilters({
       status: currentParams.get('status') || '',
       species: currentParams.get('species') || '',
@@ -38,9 +39,9 @@ export default function CharacterFilters({ currentParams, onFilterChange }) {
   const statuses = ['alive', 'dead', 'unknown'];
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'center', padding: '16px 24px', backgroundColor: '#FFFFFF', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'center', padding: '16px 24px', backgroundcolor: '#FFFFFF', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <span style={{ fontSize: '12px', fontWeight: '600', color: '#64748B', textTransform: 'uppercase' }}>Status</span>
+        <span style={{ fontSize: '12px', fontWeight: '600', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Status</span>
         <div style={{ display: 'flex', gap: '8px' }}>
           <Chip 
             label="All" 
@@ -59,12 +60,12 @@ export default function CharacterFilters({ currentParams, onFilterChange }) {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <span style={{ fontSize: '12px', fontWeight: '600', color: '#64748B', textTransform: 'uppercase' }}>Species</span>
+        <span style={{ fontSize: '12px', fontWeight: '600', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Species</span>
         <select 
           name="species" 
           value={filters.species} 
           onChange={handleChange}
-          style={{ height: '38px', borderRadius: '10px', border: '1px solid #E2E8F0', padding: '0 12px', fontSize: '14px', backgroundColor: '#FFFFFF' }}
+          style={{ height: '38px', borderRadius: '10px', border: '1px solid #E2E8F0', padding: '0 12px', fontSize: '14px', backgroundcolor: '#FFFFFF' }}
         >
           <option value="">Any</option>
           {SPECIES_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
@@ -72,12 +73,12 @@ export default function CharacterFilters({ currentParams, onFilterChange }) {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <span style={{ fontSize: '12px', fontWeight: '600', color: '#64748B', textTransform: 'uppercase' }}>Gender</span>
+        <span style={{ fontSize: '12px', fontWeight: '600', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Gender</span>
         <select 
           name="gender" 
           value={filters.gender} 
           onChange={handleChange}
-          style={{ height: '38px', borderRadius: '10px', border: '1px solid #E2E8F0', padding: '0 12px', fontSize: '14px', backgroundColor: '#FFFFFF' }}
+          style={{ height: '38px', borderRadius: '10px', border: '1px solid #E2E8F0', padding: '0 12px', fontSize: '14px', backgroundcolor: '#FFFFFF' }}
         >
           <option value="">Any</option>
           {GENDER_OPTIONS.map(g => <option key={g} value={g}>{g.charAt(0).toUpperCase() + g.slice(1)}</option>)}

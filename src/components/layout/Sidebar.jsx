@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { BASE_URL } from '../../api/endpoints';
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setIsOpen }) {
   // Fetch meta counts to populate the sidebar pills. We use a lightweight query just for page 1.
   const { data: charMeta } = useQuery({
     queryKey: ['character', 'meta'],
@@ -32,8 +32,19 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside style={{ width: '248px', backgroundColor: '#081220', color: '#FFFFFF', padding: '24px 16px', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ marginBottom: '32px', paddingLeft: '12px' }}>
+    <>
+      {/* Mobile overlay */}
+      {isOpen && (
+        <div 
+          onClick={() => setIsOpen(false)}
+          style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 40 }}
+        />
+      )}
+      <aside 
+        className={`sidebar ${isOpen ? 'open' : ''}`}
+        style={{ width: '248px', backgroundColor: '#081220', color: '#FFFFFF', padding: '24px 16px', display: 'flex', flexDirection: 'column' }}
+      >
+        <div style={{ marginBottom: '32px', paddingLeft: '12px' }}>
         <h1 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>Nexus Explorer</h1>
         <p style={{ margin: 0, fontSize: '11px', color: '#94A3B8' }}>Character Intelligence</p>
       </div>
@@ -74,5 +85,6 @@ export default function Sidebar() {
         ))}
       </nav>
     </aside>
+    </>
   );
 }

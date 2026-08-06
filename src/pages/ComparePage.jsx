@@ -59,7 +59,7 @@ export default function ComparePage() {
         <select 
           value={value} 
           onChange={onChange}
-          style={{ height: '38px', borderRadius: '10px', border: '1px solid #E2E8F0', padding: '0 12px', fontSize: '14px', backgroundColor: '#FFFFFF', width: '100%' }}
+          style={{ height: '38px', borderRadius: '10px', border: '1px solid #E2E8F0', padding: '0 12px', fontSize: '14px', backgroundcolor: '#FFFFFF', width: '100%' }}
         >
           {options.map(opt => (
             <option key={opt.id} value={opt.id}>{opt.name}</option>
@@ -70,33 +70,33 @@ export default function ComparePage() {
           )}
         </select>
 
-        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '14px', border: '1px solid #E2E8F0', overflow: 'hidden' }}>
+        <div style={{ backgroundcolor: '#FFFFFF', borderRadius: '14px', border: '1px solid #E2E8F0', overflow: 'hidden' }}>
           <div style={{ height: '200px', backgroundColor: '#EEF2FF' }}>
             <img src={char.image} alt={char.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           
           <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div>
-              <h2 style={{ margin: '0 0 8px 0', fontSize: '20px', color: '#0F172A' }}>{char.name}</h2>
+              <h2 style={{ margin: '0 0 8px 0', fontSize: '20px', color: 'var(--text-primary)' }}>{char.name}</h2>
               <Badge status={char.status} />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div>
-                <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748B', textTransform: 'uppercase' }}>Species</div>
-                <div style={{ fontSize: '14px', color: '#0F172A' }}>{char.species}</div>
+                <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Species</div>
+                <div style={{ fontSize: '14px', color: 'var(--text-primary)' }}>{char.species}</div>
               </div>
               <div>
-                <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748B', textTransform: 'uppercase' }}>Gender</div>
-                <div style={{ fontSize: '14px', color: '#0F172A' }}>{char.gender}</div>
+                <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Gender</div>
+                <div style={{ fontSize: '14px', color: 'var(--text-primary)' }}>{char.gender}</div>
               </div>
               <div>
-                <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748B', textTransform: 'uppercase' }}>Origin</div>
-                <div style={{ fontSize: '14px', color: '#0F172A' }}>{char.origin.name}</div>
+                <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Origin</div>
+                <div style={{ fontSize: '14px', color: 'var(--text-primary)' }}>{char.origin.name}</div>
               </div>
               <div>
-                <div style={{ fontSize: '11px', fontWeight: '700', color: '#64748B', textTransform: 'uppercase' }}>Episodes</div>
-                <div style={{ fontSize: '14px', color: '#0F172A' }}>{char.episode.length}</div>
+                <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Episodes</div>
+                <div style={{ fontSize: '14px', color: 'var(--text-primary)' }}>{char.episode.length}</div>
               </div>
             </div>
           </div>
@@ -108,8 +108,8 @@ export default function ComparePage() {
   return (
     <div>
       <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#0F172A', margin: '0 0 4px 0' }}>Compare Characters</h1>
-        <p style={{ margin: 0, fontSize: '14px', color: '#64748B' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--text-primary)', margin: '0 0 4px 0' }}>Compare Characters</h1>
+        <p style={{ margin: 0, fontSize: '14px', color: 'var(--text-secondary)' }}>
           State is passed purely via the URL so this comparison is shareable.
         </p>
       </div>

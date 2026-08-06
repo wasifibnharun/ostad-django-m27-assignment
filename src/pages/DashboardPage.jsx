@@ -3,6 +3,7 @@ import { BASE_URL } from "../api/endpoints";
 import StatCard from "../components/stats/StatCard";
 import { useWatchlistState } from "../contexts/watchlist/useWatchList";
 import Skeleton from "../components/ui/Skeleton";
+import RecentlyViewedPanel from "../components/watchlist/RecentlyViewedPanel";
 
 export default function DashboardPage() {
   const { watchlistIds } = useWatchlistState();
@@ -40,7 +41,7 @@ export default function DashboardPage() {
             margin: "0 0 8px 0",
             fontSize: "24px",
             fontWeight: "700",
-            color: "#0F172A",
+            color: "var(--text-primary)",
             letterSpacing: "-0.3px",
           }}
         >
@@ -53,7 +54,7 @@ export default function DashboardPage() {
           })()}
           , welcome to Nexus Explorer
         </h2>
-        <p style={{ margin: 0, color: "#64748B", fontSize: "14px" }}>
+        <p style={{ margin: 0, color: "var(--text-secondary)", fontSize: "14px" }}>
           Live summary from the database.
         </p>
       </div>
@@ -120,6 +121,10 @@ export default function DashboardPage() {
           iconBg="#FEF3C7"
           iconColor="#B45309"
         />
+      </div>
+
+      <div style={{ marginTop: '40px' }}>
+        <RecentlyViewedPanel layout="grid" />
       </div>
     </div>
   );

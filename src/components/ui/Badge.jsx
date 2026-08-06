@@ -12,10 +12,10 @@ export default function Badge({ status, text }) {
     const s = status?.toLowerCase() || '';
     if (s === 'alive') return { ...base, backgroundColor: '#D1FAE5', color: '#047857' };
     if (s === 'dead') return { ...base, backgroundColor: '#FEE2E2', color: '#B91C1C' };
-    if (s === 'unknown') return { ...base, backgroundColor: '#E2E8F0', color: '#475569' };
+    if (s === 'unknown') return { ...base, backgroundColor: 'var(--border-color)', color: '#475569' };
     if (s === 'refetching') return { ...base, backgroundColor: '#FEF3C7', color: '#B45309' };
     
-    return { ...base, backgroundColor: '#F1F5F9', color: '#64748B' };
+    return { ...base, backgroundColor: '#F1F5F9', color: 'var(--text-secondary)' };
   };
 
   return (

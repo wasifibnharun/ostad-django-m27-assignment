@@ -6,7 +6,7 @@ export default function Skeleton({ width = '100%', height = '20px', borderRadius
         width,
         height,
         borderRadius,
-        backgroundColor: '#E2E8F0',
+        backgroundColor: 'var(--border-color)',
         ...style
       }}
     />

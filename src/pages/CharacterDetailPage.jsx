@@ -90,7 +90,7 @@ export default function CharacterDetailPage() {
         style={{
           padding: "48px 24px",
           textAlign: "center",
-          backgroundColor: "#FFFFFF",
+          backgroundcolor: '#FFFFFF',
           borderRadius: "14px",
           border: "1px solid #E2E8F0",
         }}
@@ -106,7 +106,7 @@ export default function CharacterDetailPage() {
         >
           Invalid route parameter
         </h3>
-        <p style={{ fontSize: "14px", color: "#64748B", marginBottom: "24px" }}>
+        <p style={{ fontSize: "14px", color: "var(--text-secondary)", marginBottom: "24px" }}>
           Character #{id} was not found.
         </p>
         <Button onClick={() => navigate(-1)}>← Go back</Button>
@@ -138,15 +138,15 @@ export default function CharacterDetailPage() {
           <Button variant="secondary" onClick={() => navigate(-1)}>
             ← Back
           </Button>
-          <div style={{ fontSize: "14px", color: "#64748B" }}>
-            <Link to="/" style={{ color: "#64748B", textDecoration: "none" }}>
+          <div style={{ fontSize: "14px", color: "var(--text-secondary)" }}>
+            <Link to="/" style={{ color: "var(--text-secondary)", textDecoration: "none" }}>
               Explore
             </Link>{" "}
             ›
             <Link
               to="/characters"
               style={{
-                color: "#64748B",
+                color: "var(--text-secondary)",
                 textDecoration: "none",
                 marginLeft: "6px",
               }}
@@ -155,7 +155,7 @@ export default function CharacterDetailPage() {
             </Link>{" "}
             ›
             <span
-              style={{ color: "#0F172A", fontWeight: "600", marginLeft: "6px" }}
+              style={{ color: "var(--text-primary)", fontWeight: "600", marginLeft: "6px" }}
             >
               {character.name}
             </span>
@@ -189,7 +189,7 @@ export default function CharacterDetailPage() {
             style={{
               display: "flex",
               gap: "24px",
-              backgroundColor: "#FFFFFF",
+              backgroundcolor: '#FFFFFF',
               padding: "24px",
               borderRadius: "14px",
               border: "1px solid #E2E8F0",
@@ -225,7 +225,7 @@ export default function CharacterDetailPage() {
                     margin: 0,
                     fontSize: "28px",
                     fontWeight: "700",
-                    color: "#0F172A",
+                    color: "var(--text-primary)",
                   }}
                 >
                   {character.name}
@@ -237,7 +237,7 @@ export default function CharacterDetailPage() {
                 style={{
                   margin: "0 0 24px 0",
                   fontSize: "14px",
-                  color: "#64748B",
+                  color: "var(--text-secondary)",
                 }}
               >
                 {character.species} · {character.gender} · appears in{" "}
@@ -257,7 +257,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "11px",
                       fontWeight: "700",
-                      color: "#64748B",
+                      color: "var(--text-secondary)",
                       textTransform: "uppercase",
                       marginBottom: "4px",
                     }}
@@ -268,7 +268,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "14px",
                       fontWeight: "600",
-                      color: "#0F172A",
+                      color: "var(--text-primary)",
                     }}
                   >
                     {character.species}
@@ -279,7 +279,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "11px",
                       fontWeight: "700",
-                      color: "#64748B",
+                      color: "var(--text-secondary)",
                       textTransform: "uppercase",
                       marginBottom: "4px",
                     }}
@@ -290,7 +290,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "14px",
                       fontWeight: "600",
-                      color: "#0F172A",
+                      color: "var(--text-primary)",
                     }}
                   >
                     {character.gender}
@@ -301,7 +301,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "11px",
                       fontWeight: "700",
-                      color: "#64748B",
+                      color: "var(--text-secondary)",
                       textTransform: "uppercase",
                       marginBottom: "4px",
                     }}
@@ -332,7 +332,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "11px",
                       fontWeight: "700",
-                      color: "#64748B",
+                      color: "var(--text-secondary)",
                       textTransform: "uppercase",
                       marginBottom: "4px",
                     }}
@@ -343,7 +343,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "14px",
                       fontWeight: "600",
-                      color: "#0F172A",
+                      color: "var(--text-primary)",
                     }}
                   >
                     {character.type || "—"}
@@ -354,7 +354,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "11px",
                       fontWeight: "700",
-                      color: "#64748B",
+                      color: "var(--text-secondary)",
                       textTransform: "uppercase",
                       marginBottom: "4px",
                     }}
@@ -365,7 +365,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "14px",
                       fontWeight: "600",
-                      color: "#0F172A",
+                      color: "var(--text-primary)",
                     }}
                   >
                     {formatDate(character.created)}
@@ -376,7 +376,7 @@ export default function CharacterDetailPage() {
                     style={{
                       fontSize: "11px",
                       fontWeight: "700",
-                      color: "#64748B",
+                      color: "var(--text-secondary)",
                       textTransform: "uppercase",
                       marginBottom: "4px",
                     }}
@@ -409,7 +409,7 @@ export default function CharacterDetailPage() {
           {/* Episode Appearances */}
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundcolor: '#FFFFFF',
               padding: "24px",
               borderRadius: "14px",
               border: "1px solid #E2E8F0",
@@ -431,7 +431,7 @@ export default function CharacterDetailPage() {
                     margin: 0,
                     fontSize: "18px",
                     fontWeight: "700",
-                    color: "#0F172A",
+                    color: "var(--text-primary)",
                   }}
                 >
                   Episode appearances
@@ -475,11 +475,11 @@ export default function CharacterDetailPage() {
                     >
                       {ep.episode}
                     </span>
-                    <span style={{ color: "#0F172A", fontSize: "14px" }}>
+                    <span style={{ color: "var(--text-primary)", fontSize: "14px" }}>
                       {ep.name}
                     </span>
                   </div>
-                  <span style={{ color: "#64748B", fontSize: "13px" }}>
+                  <span style={{ color: "var(--text-secondary)", fontSize: "13px" }}>
                     {ep.air_date}
                   </span>
                 </div>
@@ -489,7 +489,7 @@ export default function CharacterDetailPage() {
                   style={{
                     textAlign: "center",
                     padding: "12px 0",
-                    color: "#64748B",
+                    color: "var(--text-secondary)",
                     fontSize: "13px",
                   }}
                 >
@@ -513,7 +513,7 @@ export default function CharacterDetailPage() {
           {/* Query Inspector */}
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundcolor: '#FFFFFF',
               padding: "20px",
               borderRadius: "14px",
               border: "1px solid #E2E8F0",
@@ -524,7 +524,7 @@ export default function CharacterDetailPage() {
                 margin: "0 0 16px 0",
                 fontSize: "16px",
                 fontWeight: "700",
-                color: "#0F172A",
+                color: "var(--text-primary)",
               }}
             >
               Query inspector
@@ -533,7 +533,7 @@ export default function CharacterDetailPage() {
               style={{
                 margin: "0 0 16px 0",
                 fontSize: "13px",
-                color: "#64748B",
+                color: "var(--text-secondary)",
               }}
             >
               This panel is required: it proves the detail data came from the
@@ -582,7 +582,7 @@ export default function CharacterDetailPage() {
           {/* Related Characters */}
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundcolor: '#FFFFFF',
               padding: "20px",
               borderRadius: "14px",
               border: "1px solid #E2E8F0",
@@ -593,7 +593,7 @@ export default function CharacterDetailPage() {
                 margin: "0 0 16px 0",
                 fontSize: "16px",
                 fontWeight: "700",
-                color: "#0F172A",
+                color: "var(--text-primary)",
               }}
             >
               Related characters
@@ -627,12 +627,12 @@ export default function CharacterDetailPage() {
                       style={{
                         fontSize: "14px",
                         fontWeight: "600",
-                        color: "#0F172A",
+                        color: "var(--text-primary)",
                       }}
                     >
                       {rel.name}
                     </div>
-                    <div style={{ fontSize: "12px", color: "#64748B" }}>
+                    <div style={{ fontSize: "12px", color: "var(--text-secondary)" }}>
                       {rel.species} · {rel.status}
                     </div>
                   </div>

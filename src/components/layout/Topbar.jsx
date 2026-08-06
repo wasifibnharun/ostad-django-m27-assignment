@@ -1,19 +1,57 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/theme/useTheme';
 import { CrashTest } from '../error/CrashTest';
 import Breadcrumbs from './Breadcrumbs';
+import { useDebouncedValue } from '../../hooks/useDebouncedValue';
 
-export default function Topbar() {
+export default function Topbar({ onMenuClick }) {
   const { theme, toggleTheme } = useTheme();
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   
+  const [searchValue, setSearchValue] = useState(() => searchParams.get('name') || '');
+  const debouncedSearch = useDebouncedValue(searchValue, 400);
+
+  // Sync internal state if URL changes externally
+  useEffect(() => {
+    setSearchValue(searchParams.get('name') || '');
+  }, [searchParams]);
+
+  useEffect(() => {
+    // Only act if the search value differs from the URL to prevent loops
+    const currentName = searchParams.get('name') || '';
+    if (debouncedSearch !== currentName) {
+      if (debouncedSearch) {
+        if (location.pathname === '/characters') {
+          const newParams = new URLSearchParams(searchParams);
+          newParams.set('name', debouncedSearch);
+          newParams.set('page', '1');
+          setSearchParams(newParams);
+        } else {
+          navigate(`/characters?name=${encodeURIComponent(debouncedSearch)}`);
+        }
+      } else {
+        if (location.pathname === '/characters') {
+          const newParams = new URLSearchParams(searchParams);
+          newParams.delete('name');
+          newParams.set('page', '1');
+          setSearchParams(newParams);
+        }
+      }
+    }
+  }, [debouncedSearch, location.pathname, searchParams, setSearchParams, navigate]);
+
   // DOM Refs
   const searchInputRef = useRef(null);
   const syncTextRef = useRef(null);
   const syncIconRef = useRef(null);
   
   // Track sync time locally (using a ref so it survives without re-renders)
+  // eslint-disable-next-line react-hooks/purity
   const lastSyncTimeRef = useRef(Date.now());
 
   // [REQ-6] useEffect with real dependency list & cleanup function (Ctrl+K listener)
@@ -66,24 +104,33 @@ export default function Topbar() {
 
   return (
     <header style={{ 
-      height: '64px', backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', 
+      height: '64px', backgroundcolor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', 
       display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px' 
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <button 
+          className="hamburger" 
+          onClick={onMenuClick}
+          style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer', padding: '4px' }}
+        >
+          ☰
+        </button>
         <input 
           ref={searchInputRef}
           type="text" 
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search characters... (Ctrl K)"
           style={{
             padding: '8px 12px', borderRadius: '10px', border: '1px solid #E2E8F0',
-            fontSize: '14px', width: '250px'
+            fontSize: '14px', width: '250px', backgroundcolor: '#FFFFFF', color: 'var(--text-primary)'
           }}
         />
         <Breadcrumbs />
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#64748B' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--text-secondary)' }}>
           <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#047857' }}></span>
           <span ref={syncTextRef}>Synced 0s ago</span>
           <button 

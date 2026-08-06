@@ -39,7 +39,7 @@ const CharacterCard = React.memo(({ character }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        backgroundColor: "#FFFFFF",
+        backgroundcolor: '#FFFFFF',
         borderRadius: "14px",
         border: isHovered ? "1px solid #4F46E5" : "1px solid #E2E8F0",
         padding: "14px",
@@ -76,7 +76,7 @@ const CharacterCard = React.memo(({ character }) => {
           position: "absolute",
           top: "22px",
           right: "22px",
-          backgroundColor: "#FFFFFF",
+          backgroundcolor: '#FFFFFF',
           border: "none",
           borderRadius: "50%",
           width: "28px",
@@ -125,7 +125,7 @@ const CharacterCard = React.memo(({ character }) => {
             margin: "0 0 4px 0",
             fontSize: "16px",
             fontWeight: "600",
-            color: "#0F172A",
+            color: "var(--text-primary)",
             whiteSpace: "nowrap",
             overflow: "hidden",
             textOverflow: "ellipsis",
@@ -133,7 +133,7 @@ const CharacterCard = React.memo(({ character }) => {
         >
           {character.name}
         </h3>
-        <p style={{ margin: 0, fontSize: "13px", color: "#64748B" }}>
+        <p style={{ margin: 0, fontSize: "13px", color: "var(--text-secondary)" }}>
           {character.species} • {character.gender}
         </p>
       </div>

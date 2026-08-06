@@ -22,7 +22,7 @@ export default function Button({
       return { ...base, backgroundColor: '#4F46E5', color: '#FFFFFF' };
     }
     if (variant === 'secondary') {
-      return { ...base, backgroundColor: '#FFFFFF', color: '#0F172A', border: '1px solid #E2E8F0' };
+      return { ...base, backgroundcolor: '#FFFFFF', color: 'var(--text-primary)', border: '1px solid #E2E8F0' };
     }
     if (variant === 'danger') {
       return { ...base, backgroundColor: '#DC2626', color: '#FFFFFF' };
