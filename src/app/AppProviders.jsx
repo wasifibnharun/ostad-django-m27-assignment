@@ -3,10 +3,13 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from 'react-router-dom';
 import { queryClient } from './queryClient';
 import { ThemeProvider } from '../contexts/theme/ThemeProvider';
-import { WatchlistProvider } from '../contexts/watchlist/WatchlistProvider';
-import { router } from './router';
 
-// [REQ-18] React Query setup: QueryClientProvider and the Devtools
+// FIX 1: Match the capital "L" in WatchListProvider.jsx
+import { WatchlistProvider } from '../contexts/watchlist/WatchListProvider'; 
+
+// FIX 2: Match the capital "R" in Router.jsx
+import { router } from './Router'; 
+
 export function AppProviders() {
   return (
     <QueryClientProvider client={queryClient}>
