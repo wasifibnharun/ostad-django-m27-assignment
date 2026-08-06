@@ -16,7 +16,7 @@ Built for **OSTAD Full Stack Web Development with Django and React Batch-9 · Mo
 
 ## Live Demo
 
-[nexus-explorer.vercel.app](#) *(https://ostad-django-m27-assignment-arlk-o16ujev3w-wasif15.vercel.app)*
+[Visit here to see it live](https://ostad-django-m27-assignment.vercel.app)
 
 ---
 
