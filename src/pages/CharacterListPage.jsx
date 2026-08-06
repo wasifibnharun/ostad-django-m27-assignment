@@ -9,6 +9,7 @@ import EmptyState from '../components/stats/EmptyState';
 import ErrorState from '../components/stats/ErrorState';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
+import WatchlistPanel from '../components/watchlist/WatchListPanel';
 
 export default function CharacterListPage() {
   const queryClient = useQueryClient();
@@ -147,11 +148,7 @@ export default function CharacterListPage() {
 
       {/* Right Rail placeholder (Watchlist & Data Freshness) */}
       <aside style={{ width: '320px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        {/* WatchlistPanel component will go here */}
-        <div style={{ backgroundColor: '#FFFFFF', padding: '20px', borderRadius: '14px', border: '1px solid #E2E8F0' }}>
-           <h3 style={{ margin: '0 0 16px 0', fontSize: '16px' }}>Right Rail Reserved</h3>
-           <p style={{ fontSize: '13px', color: '#64748B'}}>Watchlist and Data Freshness panels will render here in desktop view.</p>
-        </div>
+        <WatchlistPanel />
       </aside>
     </div>
   );
