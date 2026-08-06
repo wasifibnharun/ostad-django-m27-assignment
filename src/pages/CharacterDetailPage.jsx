@@ -3,6 +3,8 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useCharacter } from "../hooks/useCharacter";
 import { useWatchlist } from "../contexts/watchlist/useWatchList";
 import { charactersUrl, episodesUrl } from "../api/endpoints";
+import { useEffect } from 'react';
+import { useRecentlyViewed } from '../hooks/useRecentlyViewed';
 import Button from "../components/ui/Button";
 import Badge from "../components/ui/Badge";
 import Skeleton from "../components/ui/Skeleton";
