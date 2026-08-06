@@ -9,7 +9,7 @@ import CharacterListPage from '../pages/CharacterListPage';
 import CharacterDetailPage from '../pages/CharacterDetailPage';
 import EpisodeListPage from '../pages/EpisodeListPage';
 import LocationListPage from '../pages/LocationListPage';
-import WatchlistPage from '../pages/WatchlistPage';
+import WatchlistPage from '../pages/WatchListPage';
 import ComparePage from '../pages/ComparePage';
 import SettingsPage from '../pages/SettingsPage';
 import NotFoundPage from '../pages/NotFoundPage';

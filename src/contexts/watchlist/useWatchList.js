@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WatchlistStateContext, WatchlistActionsContext } from './WatchlistContext';
+import { WatchlistStateContext, WatchlistActionsContext } from './WatchListContext';
 
 // [REQ-15] Modular context structure: custom hooks that throw an error if used outside their Provider
 export function useWatchlistState() {

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { WatchlistStateContext, WatchlistActionsContext } from './WatchlistContext';
+import { WatchlistStateContext, WatchlistActionsContext } from './WatchListContext';
 
 export function WatchlistProvider({ children }) {
   const [watchlistIds, setWatchlistIds] = useState(() => {
